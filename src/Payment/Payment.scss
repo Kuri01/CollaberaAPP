@@ -1,0 +1,49 @@
+.payment-wrapper {
+    nav {
+        h1 {
+            padding: 20px 100px;
+        }
+        background-color: unset !important;
+    }
+    .container-wrapper {
+        height: 500px;
+        .left {
+            // height: inherit;
+            width: 900px;
+            display: inline-block;
+            margin-right: 20px;
+            margin-left: 70px;
+            border-radius: 3px;
+                .col-md-6 {
+                    margin-left: 30px;
+                }
+                .apply-block {
+                    background-color: white;
+                    height: 220px;
+                    width: 330px;
+                    padding: 5px 10px;
+                    .payIcons {
+                            display: inline;
+                    }
+                }
+                .order-summary {
+                    background-color: white;
+                    height: 400px;
+                    width: 400px;
+                    padding: 5px 10px;
+                    div {
+                        label {
+                            padding: 0 10px;
+                            font-size: 14px;
+                        }
+                    }
+                }
+        }
+        .right {
+            // height: inherit;
+            width: 500px;
+            display: inline-block;
+        }
+    
+    }
+}
