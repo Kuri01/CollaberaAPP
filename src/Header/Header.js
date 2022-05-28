@@ -6,14 +6,13 @@ import {
   Row,
   Col,
 } from 'react-bootstrap';
-import { useState } from 'react';
 import PersonIcon from '@mui/icons-material/Person';
 import IconButton from '@mui/material/IconButton';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Badge from '@mui/material/Badge';
 import { styled } from '@mui/material/styles';
 import styles from './Header.module.scss';
-import { Link, Routes, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   '& .MuiBadge-badge': {
@@ -25,24 +24,11 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 }));
 
 const Header = (props) => {
-  const [showCart, setshowCart] = useState(false);
-  const [showLogin, setshowLogin] = useState(true);
-
-  const handleCloseCart = () => setshowCart(false);
-  const handleshowCart = () => setshowCart(true);
-
-  const handleCloseLogin = () => setshowLogin(false);
-  const handleshowLogin = () => setshowLogin(true);
-
   const handleChange = (event) => {
     event.preventDefault();
     props.handleSearch(event.target.value);
   };
 
-  const handleClick = (event) => {
-    event.preventDefault();
-    handleshowCart();
-  };
   return (
     <Navbar bg='light' variant='light' expand='lg'>
       {' '}
@@ -73,16 +59,22 @@ const Header = (props) => {
               </Form>
             </Col>
             <Col align='center'>
-              <IconButton
-                aria-label='cart'
-                style={{ margin: '0 10px 0 10px', fontSize: '100px' }}
-              >
-                <StyledBadge badgeContent={4} color='secondary'>
-                  <ShoppingCartIcon
-                    style={{ fontSize: '40px', color: 'black' }}
-                  />
-                </StyledBadge>
-              </IconButton>
+              <Link to='/cart'>
+                <IconButton
+                  aria-label='cart'
+                  style={{ margin: '0 10px 0 10px', fontSize: '100px' }}
+                >
+                  <StyledBadge
+                    badgeContent={props.cartLength}
+                    color='secondary'
+                  >
+                    <ShoppingCartIcon
+                      style={{ fontSize: '40px', color: 'black' }}
+                    />
+                  </StyledBadge>
+                </IconButton>
+              </Link>
+
               <IconButton aria-label='user' style={{ margin: '0 10px 0 10px' }}>
                 <PersonIcon style={{ fontSize: '50px', color: 'black' }} />
               </IconButton>
@@ -125,7 +117,7 @@ const Header = (props) => {
               xs={3}
             >
               <p className={styles.linkContainer}>
-                <Link to='/about' className={styles.link}>
+                <Link to='/' className={styles.link}>
                   About us
                 </Link>
               </p>

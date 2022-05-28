@@ -1,79 +1,77 @@
 .payment-wrapper {
-    nav {
-        h1 {
-            padding: 20px 100px;
-        }
-        background-color: unset !important;
+  nav {
+    h1 {
+      padding: 20px 100px;
     }
-    .container-fluid {
-        height: 500px;
-        .payIcons {
-            display: inline;
+    background-color: unset !important;
+  }
+  .container-fluid {
+    height: 500px;
+    .payIcons {
+      display: inline;
     }
-        .left {
-            // height: inherit;
-            // width: 900px;
-            display: inline-block;
-            margin-right: 20px;
-            // margin-left: 70px;
-            border-radius: 3px;
-                .col-md-4 {
-                    margin-left: 100px;
-                    margin-right: 30px;
-                }
-                .apply-block {
-                    background-color: white;
-                    height: 220px;
-                    width: 330px;
-                    padding: 5px 10px;
-                    margin-top: 20px;
-                    border-radius: 5px;
-                    
-                }
-                .order-summary {
-                    background-color: white;
-                    height: 400px;
-                    width: 400px;
-                    padding: 5px 10px;
-                    margin-top: 45px;
-                    border-radius: 5px;
-                    div {
-                        label {
-                            padding: 0 10px;
-                            font-size: 14px;
-                        }
-                    }
-                }
-                box-shadow: 2px 2px 2px 2px #e9ecef;
+    .left {
+      // height: inherit;
+      // width: 900px;
+      display: inline-block;
+      margin-right: 20px;
+      // margin-left: 70px;
+      border-radius: 3px;
+      .col-md-4 {
+        margin-left: 100px;
+        margin-right: 30px;
+      }
+      .apply-block {
+        background-color: white;
+        height: 220px;
+        width: 330px;
+        padding: 5px 10px;
+        margin-top: 20px;
+        border-radius: 5px;
+      }
+      .order-summary {
+        background-color: white;
+        height: 400px;
+        width: 400px;
+        padding: 5px 10px;
+        margin-top: 45px;
+        border-radius: 5px;
+        div {
+          label {
+            padding: 0 10px;
+            font-size: 14px;
+          }
         }
-        .right {
-            // height: inherit;
-            // width: 500px;
-            box-shadow: 2px 2px 2px 2px #e9ecef;
-            display: inline-block;
-            .form-check {
-                height: 50px;
-                margin-left: 20px;
-                line-height: 47px;
-                background-color: white;
-                width: 350px;
-                border-radius: 3px;
-                input {
-                    margin-top: 16px;
-                    margin-left: -10px;
-                    margin-right: 10px;
-                }
-                label {
-                    font-weight: bold;
-                }
-            }
-            .payIcons {
-                width: 45px;
-                float: right;
-                margin-top: 10px;
-                margin-right: 15px;
-            }
-        }
-    
+      }
+      box-shadow: 2px 2px 2px 2px #e9ecef;
     }
+    .right {
+      // height: inherit;
+      // width: 500px;
+      box-shadow: 2px 2px 2px 2px #e9ecef;
+      display: inline-block;
+      .form-check {
+        height: 50px;
+        margin-left: 20px;
+        line-height: 47px;
+        background-color: white;
+        width: 350px;
+        border-radius: 3px;
+        input {
+          margin-top: 16px;
+          margin-left: -10px;
+          margin-right: 10px;
+        }
+        label {
+          font-weight: bold;
+        }
+      }
+      .payIcons {
+        width: 45px;
+        float: right;
+        margin-top: 10px;
+        margin-right: 15px;
+      }
+    }
+  }
 }

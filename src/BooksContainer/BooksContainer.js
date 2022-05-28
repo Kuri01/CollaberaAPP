@@ -4,7 +4,6 @@ import { animated, useSprings } from 'react-spring';
 import styled, { ThemeProvider } from 'styled-components';
 import { Box, Container, Heading, Typography, Flex, Grid, theme } from './ui';
 import { Button } from '@mui/material';
-import cards from './cards';
 
 const GridContainer = styled(Grid)``;
 GridContainer.defaultProps = {
@@ -59,13 +58,14 @@ TextWrapper.defaultProps = {
 const AnimatedBox = styled(animated(Box))``;
 AnimatedBox.defaultProps = {};
 
-function BooksContainer() {
+const BooksContainer = (props) => {
   const [index, setIndex] = useState(null);
   const [isDelayed, setIsDelayed] = useState(true);
+  const Books = props.books;
 
   const springs = useSprings(
-    cards.length,
-    cards.map((item, i) => ({
+    Books.length,
+    Books.map((item, i) => ({
       delay: isDelayed ? 80 * i : 0,
       opacity: 1,
       transform: 'translateY(0px)',
@@ -81,6 +81,11 @@ function BooksContainer() {
       },
     }))
   );
+
+  const handleClick = (event) => {
+    event.preventDefault();
+    props.handleAddToCart(parseInt(event.target.value));
+  };
 
   return (
     <ThemeProvider theme={theme}>
@@ -102,21 +107,36 @@ function BooksContainer() {
                   key={i}
                 >
                   <AnimatedItem
-                    background={`url(${cards[i].url}?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)`}
+                    background={`url(${Books[i].url}?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)`}
                     style={{ opacity, transform }}
                   >
                     <TitleWrapper style={{ opacity: overlayOpacity }}>
-                      {cards[i].title}
+                      {Books[i].title}
                     </TitleWrapper>
                   </AnimatedItem>
                   <TextWrapper style={{ height: textHeight }}>
                     <AnimatedBox style={{ opacity: textOpacity }} p={2}>
                       <Typography fontSize={3} fontWeight={2} pb={2}>
-                        {cards[i].title}
+                        {Books[i].title}
                       </Typography>
-                      {cards[i].text}
+                      <Container style={{ height: '100px' }}>
+                        <p style={{ padding: 0, margin: 0 }}>
+                          <span>ISBN: </span>
+                          {Books[i].isbn}
+                        </p>
+                        <p style={{ padding: 0, margin: 0 }}>
+                          <span>Number of pages: </span>
+                          {Books[i].pages}
+                        </p>
+                        <p style={{ padding: 0, margin: 0 }}>
+                          <span>Release date: </span>
+                          {Books[i].releaseDate}
+                        </p>
+                        <Button value={Books[i].id} onClick={handleClick}>
+                          Add to cart
+                        </Button>
+                      </Container>
                     </AnimatedBox>
-                    <Button>Add to cart</Button>
                   </TextWrapper>
                 </AnimatedItem>
               )
@@ -126,6 +146,6 @@ function BooksContainer() {
       </Box>
     </ThemeProvider>
   );
-}
+};
 
 export default BooksContainer;

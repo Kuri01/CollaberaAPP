@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+.body{
+    font-family: 'Righteous', cursive;
+    padding:0;
+    margin:0;
+
+    
+}
+
+ .container_left{
+    background-color: rgb(255, 255, 255);
+    padding:5%;
+    width: 66%;
+    display: table-cell;
+
+}
+
+ .container_right{
+    background-color: rgb(219, 240, 255);
+    padding:5%;
+    width: 34%;
+    
+    display: table-cell;
+    
+}
+ .container_left .header_text{
+     width: 100%;
+    padding: 15px;
+    
+    height:70px;
+}
+ .container_left .header_text h2{
+    display: inline-block;
+    float: left;
+}
+ .container_left .header_text p{
+    display: inline-block;
+    float: right;
+    font-size: 20px;
+    padding-top: 5px;
+    font-weight: bold;
+}
+
+.container_left hr{
+    width:100%;
+}
+
+.container_left .table tbody tr td .row .col li {
+  list-style: none;
+}
+.container_left .table tbody tr td .row .col li .rem{
+  margin-left:-10px;
+}
+.container_left .text_btn{
+    bottom:0;
+    left:0;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+.container_right .headers{
+    display: block;
+    padding-top: 5%;
+}
+
+.container_right .headers strong.left{
+   
+    float: left;
+    display: block;
+}
+.container_right .headers strong.right{
+    float: right;
+    display: block;
+   
+}
+
+.container_right h5{
+font-size: 30px;
+margin-top: 15%;
+
+}
+.container_right hr.last{
+    margin-top: 15%;
+}
+
+.container_right .normal{
+  background-color:rgb(187, 33, 79);
+  font-size: 15px;
+  width: 50%;
+  margin-top: 10%;
+}
+.container_right .large{
+    background-color:rgb(131, 74, 131);
+    font-size: 20px;
+    width: 100%;
+    margin-top: 10%;
+}
+
